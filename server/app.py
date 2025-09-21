@@ -36,7 +36,8 @@ def update_message(id):
 
 @app.route('/messages/<int:id>', methods=['DELETE'])
 def delete_message(id):
-    msg = Message.query.get_or_404(id)
-    db.session.delete(msg)
+    message = Message.query.get_or_404(id)
+    db.session.delete(message)
     db.session.commit()
     return '', 204
+
